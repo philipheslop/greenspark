@@ -1,0 +1,9 @@
+1. Examine Design Brief
+
+2. Examine Data Structure
+
+3. Choose and Justify Dev Stack
+
+4. Create Minimal Viable Product (Cover Design Brief)
+
+5. Stretch Goals (Expand and Explore)
