@@ -1,8 +1,17 @@
+0. Intro
+
 1. Examine Design Brief
+	Requirements
+	Assets
 
 2. Examine Data Structure
+	Format
+	API / BackEnd
 
 3. Choose and Justify Dev Stack
+	Flat File
+	React (Vue.js, Angular)
+	Jest
 
 4. Create Minimal Viable Product (Cover Design Brief)
 
