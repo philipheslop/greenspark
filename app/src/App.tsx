@@ -13,7 +13,7 @@ function App() {
     })
       .then((response) => response.json())
       .then((data) => {
-        setData(data);
+        setData(data[0].type);
         console.log(data);
       })
       .catch(error=>console.error(error))
@@ -33,6 +33,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
+          {data && <p>{data}</p>}
         </a>
       </header>
     </div>
