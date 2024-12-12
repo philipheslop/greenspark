@@ -1,6 +1,8 @@
 export type WidgetType = 'carbon' | 'plastic bottles' | 'trees';
 export type WidgetAction = 'collects' | 'plants' | 'offsets';
-export type WidgetColor = 'white' | 'black' | 'blue' |'green' | 'beige';
+export const WidgetColourValues = ['white', 'black' , 'blue' , 'green' , 'beige'] as const;
+
+type WidgetColor = typeof WidgetColourValues[number];
 
 export interface Widget {
   id: number;
