@@ -15,16 +15,18 @@ function App() {
 }
 
 function AppContents() {
-      const { isLoading, error, data } = useQuery<Widget[]>({
+  const { isLoading, error, data } = useQuery<Widget[]>({
       queryKey: ['widgets'],
       queryFn: getWidgets,
-    })
-    //const [activeWidget, setActiveWidget] = useState(null);
-    if (isLoading) return 'Loading...'
-    if (error) return 'An error has occurred: ' + error.message
-  return (<div className="App">
-    <WidgetsContainer processedData={data?data:[]}></WidgetsContainer>
-  </div>)
+  })
+  //const [activeWidget, setActiveWidget] = useState(null);
+  if (isLoading) return 'Loading...'
+  if (error) return 'An error has occurred: ' + error.message
+  return (
+    <div className="App">
+      <WidgetsContainer processedData={data?data:[]}></WidgetsContainer>
+    </div>
+  )
 }
 
 export default App;
