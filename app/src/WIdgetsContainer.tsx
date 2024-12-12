@@ -11,9 +11,10 @@ export const WidgetsContainer:React.FC<WidgetContainerProps> = ({ processedData 
   //const setCurrentUser = useContext(CurrentUserContext);
 
   return (
-    <div>
+    <div className='outer-container'>
         <h1>Per product widgets</h1>
-        <div className='WidgetsContainer'>
+        <hr></hr>
+        <div className='widgets-container'>
         {processedData.map((widget:Widget) => {
             return (
             <div>

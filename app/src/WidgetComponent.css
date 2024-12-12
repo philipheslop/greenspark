@@ -1,15 +1,63 @@
 .widget-card {
     flex: 1;
-    border-radius: 3%;
-    background-color: beige;
+    border-radius: 5px;
+    background-color: #E9E9E9;
     margin: 5px;
     justify-content: center; /* Aligns items on the main axis */
     align-items: center; /* Aligns items on the cross axis */
     width: 300px;
 }
 
+.widget-header {
+    --widget-colour: 'black';
+    --widget-text-colour: 'white';
+    border-radius: 5px;
+    display: flex;
+    margin: auto;
+    background-color: var(--widget-colour);
+    color: var(--widget-text-colour);
+}
+
+.widget-header-title-elements {
+    display: inline-block;
+}
+
+.widget-logo {
+    padding: 5px;
+}
+
+.widget-header-title {
+    text-align: left;
+    display: block;
+    font-size: smaller;
+    padding: 5px 0 0 5px;
+}
+
+.widget-header-sub-title {
+    text-align: left;
+    display: block;
+    font-size: larger;
+    padding: 5px 0 0 5px;
+}
+
 .widget-palette {
-    width:32px;
-    height:32px;
-    background-color: var(--colour);
+    align-content:end;
+}
+
+.widget-palette-element {
+    --palette-colour: 'white';
+    --selected-border: '5px';
+    display: inline-block;
+    width:16px;
+    height:16px;
+    vertical-align: middle;
+    background-color: var(--palette-colour);
+    border-style: solid;
+    border-color: lightgray;
+    border-width: var(--selected-border);
+    margin: 0 0 0 5px;
+}
+
+.widget-palette-element:hover {
+    opacity: 66%;
 }

@@ -1,11 +1,21 @@
-.WidgetsContainer {
-    display: flex;
-    margin: auto;
-    width: 50%;
+h1 {
+    text-align: left;
 }
 
-@media (max-width: 768px) {
-    .WidgetsContainer {
+.outer-container {
+    margin: auto;
+    width: 930px;
+}
+
+.widgets-container {
+    display: flex;
+}
+
+@media (max-width: 930px) {
+    .widgets-container {
         flex-direction: column; /* Stacks items vertically on smaller screens */
+    }
+    .outer-container {
+        width: 310px;
     }
 }
