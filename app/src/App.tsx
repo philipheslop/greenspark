@@ -1,9 +1,8 @@
 //import React, { useEffect, useState } from 'react';
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
-import logo from './logo.svg';
 import './App.css';
 import { getWidgets, Widget } from './widgetUtils';
-import { WidgetsContainer } from './WIdgetsContainer';
+import { WidgetsContainer } from './WidgetsContainer';
 
 const queryClient = new QueryClient()
 
@@ -20,14 +19,19 @@ function AppContents() {
       queryKey: ['widgets'],
       queryFn: getWidgets,
     })
-
     //const [activeWidget, setActiveWidget] = useState(null);
-  
     if (isLoading) return 'Loading...'
     if (error) return 'An error has occurred: ' + error.message
   return (<div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
+    <WidgetsContainer processedData={data?data:[]}></WidgetsContainer>
+  </div>)
+}
+
+export default App;
+
+/* <header className="App-header">
+      
+    <img src={logo} className="App-logo" alt="logo" />
       <p>
         Edit <code>src/App.tsx</code> and save to reload bananas.
       </p>
@@ -39,9 +43,4 @@ function AppContents() {
       >
         Learn React
       </a>
-    </header>
-    <WidgetsContainer processedData={data?data:[]}></WidgetsContainer>
-  </div>)
-}
-
-export default App;
+      </header>**/
