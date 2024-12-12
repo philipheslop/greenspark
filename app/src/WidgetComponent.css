@@ -1,4 +1,9 @@
 .WidgetCard {
+    flex: 1;
     border-radius: 3%;
     background-color: beige;
+    margin: 5px;
+    justify-content: center; /* Aligns items on the main axis */
+    align-items: center; /* Aligns items on the cross axis */
+    width: 300px;
 }

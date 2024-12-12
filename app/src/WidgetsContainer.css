@@ -1,3 +1,11 @@
 .WidgetsContainer {
     display: flex;
+    margin: auto;
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    .WidgetsContainer {
+        flex-direction: column; /* Stacks items vertically on smaller screens */
+    }
 }
