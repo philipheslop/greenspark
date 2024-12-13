@@ -77,12 +77,12 @@ export const WidgetsComponent:React.FC<WidgetComponentProps> = ({ widget }) => {
                 <div className="widget-body-item-l">Linked:</div>
                 <div className="widget-body-item-r">
                     <input type="checkbox" className="check_box" id={"checkbox"+widget.id} checked={widget.linked} onChange={()=>updateWidgetLinked(widget.id,!widget.linked)}/>
-                    <label htmlFor={"checkbox"+widget.id} />
+                    <label className="check_box_label" htmlFor={"checkbox"+widget.id} />
                 </div>
                 <div className="widget-body-item-l">Active:</div>
                 <div className="widget-body-item-r">
                     <input type="checkbox" className="toggle" id={"toggle"+widget.id} checked={widget.active} onChange={()=>updateWidgetActive(widget.id,!widget.active)}/>
-                    <label htmlFor={"toggle"+widget.id} />
+                    <label className="toggle_label" htmlFor={"toggle"+widget.id} />
                 </div>
                 <div className="widget-body-item-l">Badge Colour: </div>
                 <div className="widget-body-item-r">

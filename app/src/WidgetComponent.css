@@ -82,17 +82,10 @@
     display:none;
 }
 
-.check_box:hover + img{
+.check_box_label:hover{
     background:url('./assets/check_box_hover.svg') no-repeat;
     background-size: 20px;
 }
-
-/*.check_box:hover {
-    border-radius: 100%;
-    border-style: solid;
-    border-color: green;
-    border-width: 10px;
-}*/
 
 .check_box + label{
     background:url('./assets/check_box_unchecked.svg') no-repeat;
@@ -118,7 +111,7 @@
     display:none;
 }
 
-.toggle:hover {
+.toggle_label:hover {
     background:url('./assets/toggle_hover.svg') no-repeat;
     background-size: 30px;
 }
