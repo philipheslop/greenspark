@@ -1,11 +1,17 @@
+a {
+  color: green;
+  text-decoration: none;
+}
+
 .widget-card {
   flex: 1;
   border-radius: 5px;
-  background-color: #e9e9e9;
-  margin: 5px;
+  background-color: #f6f6f6;
+  margin: 10px;
   justify-content: center; /* Aligns items on the main axis */
   align-items: center; /* Aligns items on the cross axis */
-  width: 300px;
+  width: 290px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .widget-header {
@@ -37,6 +43,7 @@
   text-align: left;
   display: block;
   font-size: larger;
+  font-weight: bold;
   padding: 5px 0 0 5px;
 }
 
@@ -113,14 +120,14 @@
 
 .toggle_label:hover {
   background: url("./assets/toggle_hover.svg") no-repeat;
-  background-size: 30px;
+  background-size: 40px;
 }
 
 .toggle + label {
   background: url("./assets/toggle_off.svg") no-repeat;
-  background-size: 30px;
-  height: 20px;
-  width: 30px;
+  background-size: 40px;
+  height: 30px;
+  width: 40px;
   display: inline-block;
   padding: 0 0 0 0px;
   vertical-align: middle;
@@ -128,10 +135,42 @@
 
 .toggle:checked + label {
   background: url("./assets/toggle_on.svg") no-repeat;
-  background-size: 30px;
-  height: 20px;
-  width: 30px;
+  background-size: 40px;
+  height: 30px;
+  width: 40px;
   display: inline-block;
   padding: 0 0 0 0px;
   vertical-align: middle;
+}
+
+.widget-link-info {
+  position: relative;
+  display: inline-block;
+  vertical-align: super;
+  font-size: smaller;
+}
+
+.widget-link-info .tooltiptext {
+  visibility: hidden;
+  width: 248px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.widget-link-info:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
