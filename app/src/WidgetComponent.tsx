@@ -7,7 +7,7 @@ export interface WidgetComponentProps {
     widget: Widget
 }
 
-function adjustBackgroundAndForegroundColour( inputColour: string) {
+function adjustBackgroundAndForegroundColour(inputColour: string) {
     return inputColour === 'beige' || inputColour === 'white' ? 'green' : '#F9F9F9'
 }
 
@@ -23,46 +23,46 @@ const updateWidgetColour = (id: number, colour: WidgetColor) => {
             return widget;
         })
     });
-  }
-  
-  const updateWidgetLinked = (id: number, linked: boolean) => {
-    queryClient.setQueryData(['widgets'], (widgets: Widget[]) => {
-      return widgets.map((widget: Widget) => {
-        if (widget.id === id) {
-          return {
-            ...widget,
-            linked: linked,
-          };
-        }
-        return widget;
-      });
-    });
-  }
-  
-  const updateWidgetActive = (id: number, active: boolean) => {
+}
+
+const updateWidgetLinked = (id: number, linked: boolean) => {
     queryClient.setQueryData(['widgets'], (widgets: Widget[]) => {
         return widgets.map((widget: Widget) => {
             if (widget.id === id) {
-              return {
-                ...widget,
-                active: active,
-              };
+                return {
+                    ...widget,
+                    linked: linked,
+                };
+            }
+            return widget;
+        });
+    });
+}
+
+const updateWidgetActive = (id: number, active: boolean) => {
+    queryClient.setQueryData(['widgets'], (widgets: Widget[]) => {
+        return widgets.map((widget: Widget) => {
+            if (widget.id === id) {
+                return {
+                    ...widget,
+                    active: active,
+                };
             }
             return {
-              ...widget,
-              active: false,
+                ...widget,
+                active: false,
             }
         });
     });
-  }
+}
 
-export const WidgetsComponent:React.FC<WidgetComponentProps> = ({ widget }) => {
+export const WidgetsComponent: React.FC<WidgetComponentProps> = ({ widget }) => {
 
     return (
         <div className='widget-card'>
-            <div style={{'--widget-colour': widget.selectedColor, '--widget-text-colour': adjustBackgroundAndForegroundColour(widget.selectedColor)} as React.CSSProperties} className='widget-header'>
+            <div style={{ '--widget-colour': widget.selectedColor, '--widget-text-colour': adjustBackgroundAndForegroundColour(widget.selectedColor) } as React.CSSProperties} className='widget-header'>
                 <div className="widget-logo">
-                <Logo fill={adjustBackgroundAndForegroundColour(widget.selectedColor)}></Logo>
+                    <Logo fill={adjustBackgroundAndForegroundColour(widget.selectedColor)}></Logo>
                 </div>
                 <div className='widget-header-title-elements'>
                     <div className='widget-header-title'>
@@ -76,18 +76,18 @@ export const WidgetsComponent:React.FC<WidgetComponentProps> = ({ widget }) => {
             <div className="widget-body">
                 <div className="widget-body-item-l">Linked:</div>
                 <div className="widget-body-item-r">
-                    <input type="checkbox" className="check_box" id={"checkbox"+widget.id} checked={widget.linked} onChange={()=>updateWidgetLinked(widget.id,!widget.linked)}/>
-                    <label className="check_box_label" htmlFor={"checkbox"+widget.id} />
+                    <input type="checkbox" className="check_box" id={"checkbox" + widget.id} checked={widget.linked} onChange={() => updateWidgetLinked(widget.id, !widget.linked)} />
+                    <label className="check_box_label" htmlFor={"checkbox" + widget.id} />
                 </div>
                 <div className="widget-body-item-l">Active:</div>
                 <div className="widget-body-item-r">
-                    <input type="checkbox" className="toggle" id={"toggle"+widget.id} checked={widget.active} onChange={()=>updateWidgetActive(widget.id,!widget.active)}/>
-                    <label className="toggle_label" htmlFor={"toggle"+widget.id} />
+                    <input type="checkbox" className="toggle" id={"toggle" + widget.id} checked={widget.active} onChange={() => updateWidgetActive(widget.id, !widget.active)} />
+                    <label className="toggle_label" htmlFor={"toggle" + widget.id} />
                 </div>
                 <div className="widget-body-item-l">Badge Colour: </div>
                 <div className="widget-body-item-r">
-                    <div className = 'widget-palette'>
-                        {WidgetColourValues.map((colour:WidgetColor) => {
+                    <div className='widget-palette'>
+                        {WidgetColourValues.map((colour: WidgetColor) => {
                             return (
                                 <div
                                     style={
@@ -95,8 +95,8 @@ export const WidgetsComponent:React.FC<WidgetComponentProps> = ({ widget }) => {
                                             '--palette-colour': colour,
                                             '--selected-border': widget.selectedColor === colour ? '3px' : '0px'
                                         } as React.CSSProperties
-                                    } className = 'widget-palette-element'
-                                    onClick={()=>updateWidgetColour(widget.id,colour)}>
+                                    } className='widget-palette-element'
+                                    onClick={() => updateWidgetColour(widget.id, colour)}>
                                 </div>
                             );
                         })}
@@ -105,4 +105,4 @@ export const WidgetsComponent:React.FC<WidgetComponentProps> = ({ widget }) => {
             </div>
         </div>
     );
-  };
+};

@@ -1,137 +1,137 @@
 .widget-card {
-    flex: 1;
-    border-radius: 5px;
-    background-color: #E9E9E9;
-    margin: 5px;
-    justify-content: center; /* Aligns items on the main axis */
-    align-items: center; /* Aligns items on the cross axis */
-    width: 300px;
+  flex: 1;
+  border-radius: 5px;
+  background-color: #e9e9e9;
+  margin: 5px;
+  justify-content: center; /* Aligns items on the main axis */
+  align-items: center; /* Aligns items on the cross axis */
+  width: 300px;
 }
 
 .widget-header {
-    --widget-colour: 'black';
-    --widget-text-colour: 'white';
-    border-radius: 5px;
-    display: flex;
-    margin: auto;
-    background-color: var(--widget-colour);
-    color: var(--widget-text-colour);
+  --widget-colour: "black";
+  --widget-text-colour: "white";
+  border-radius: 5px;
+  display: flex;
+  margin: auto;
+  background-color: var(--widget-colour);
+  color: var(--widget-text-colour);
 }
 
 .widget-header-title-elements {
-    display: inline-block;
+  display: inline-block;
 }
 
 .widget-logo {
-    padding: 5px;
+  padding: 5px;
 }
 
 .widget-header-title {
-    text-align: left;
-    display: block;
-    font-size: smaller;
-    padding: 5px 0 0 5px;
+  text-align: left;
+  display: block;
+  font-size: smaller;
+  padding: 5px 0 0 5px;
 }
 
 .widget-header-sub-title {
-    text-align: left;
-    display: block;
-    font-size: larger;
-    padding: 5px 0 0 5px;
+  text-align: left;
+  display: block;
+  font-size: larger;
+  padding: 5px 0 0 5px;
 }
 
 .widget-body {
-    display: grid;
-    grid-template-columns: auto auto;
-    color: green;
+  display: grid;
+  grid-template-columns: auto auto;
+  color: green;
 }
 
 .widget-body-item-l {
-    text-align: left;
-    padding: 5px;
+  text-align: left;
+  padding: 5px;
 }
 
 .widget-body-item-r {
-    text-align: right;
-    padding: 5px;
+  text-align: right;
+  padding: 5px;
 }
 
 .widget-palette {
-    align-content:end;
+  align-content: end;
 }
 
 .widget-palette-element {
-    --palette-colour: 'white';
-    --selected-border: '5px';
-    display: inline-block;
-    width:16px;
-    height:16px;
-    vertical-align: middle;
-    background-color: var(--palette-colour);
-    border-style: solid;
-    border-color: lightgray;
-    border-width: var(--selected-border);
-    margin: 0 0 0 5px;
+  --palette-colour: "white";
+  --selected-border: "5px";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  background-color: var(--palette-colour);
+  border-style: solid;
+  border-color: lightgray;
+  border-width: var(--selected-border);
+  margin: 0 0 0 5px;
 }
 
 .widget-palette-element:hover {
-    opacity: 66%;
+  opacity: 66%;
 }
 
 .check_box {
-    display:none;
+  display: none;
 }
 
-.check_box_label:hover{
-    background:url('./assets/check_box_hover.svg') no-repeat;
-    background-size: 20px;
+.check_box_label:hover {
+  background: url("./assets/check_box_hover.svg") no-repeat;
+  background-size: 20px;
 }
 
-.check_box + label{
-    background:url('./assets/check_box_unchecked.svg') no-repeat;
-    background-size: 20px;
-    height:20px;
-    width: 20px;
-    display:inline-block;
-    padding: 0 0 0 0px;
-    vertical-align: middle;
+.check_box + label {
+  background: url("./assets/check_box_unchecked.svg") no-repeat;
+  background-size: 20px;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  padding: 0 0 0 0px;
+  vertical-align: middle;
 }
 
-.check_box:checked + label{
-    background:url('./assets/check_box_checked.svg') no-repeat;
-    background-size: 20px;
-    height: 20px;
-    width: 20px;
-    display:inline-block;
-    padding: 0 0 0 0px;
-    vertical-align: middle;
+.check_box:checked + label {
+  background: url("./assets/check_box_checked.svg") no-repeat;
+  background-size: 20px;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  padding: 0 0 0 0px;
+  vertical-align: middle;
 }
 
 .toggle {
-    display:none;
+  display: none;
 }
 
 .toggle_label:hover {
-    background:url('./assets/toggle_hover.svg') no-repeat;
-    background-size: 30px;
+  background: url("./assets/toggle_hover.svg") no-repeat;
+  background-size: 30px;
 }
 
 .toggle + label {
-    background:url('./assets/toggle_off.svg') no-repeat;
-    background-size: 30px;
-    height:20px;
-    width: 30px;
-    display:inline-block;
-    padding: 0 0 0 0px;
-    vertical-align: middle;
+  background: url("./assets/toggle_off.svg") no-repeat;
+  background-size: 30px;
+  height: 20px;
+  width: 30px;
+  display: inline-block;
+  padding: 0 0 0 0px;
+  vertical-align: middle;
 }
 
 .toggle:checked + label {
-    background:url('./assets/toggle_on.svg') no-repeat;
-    background-size: 30px;
-    height: 20px;
-    width: 30px;
-    display:inline-block;
-    padding: 0 0 0 0px;
-    vertical-align: middle;
+  background: url("./assets/toggle_on.svg") no-repeat;
+  background-size: 30px;
+  height: 20px;
+  width: 30px;
+  display: inline-block;
+  padding: 0 0 0 0px;
+  vertical-align: middle;
 }

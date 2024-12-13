@@ -9,7 +9,7 @@ import App from './App';
 });*/
 
 //As a user I want to see my product widgets.
-test('3 wigdets are displayed', async() => {
+test('3 wigdets are displayed', async () => {
   render(<App />);
   await waitFor(() => {
     const widgetContainer = screen.getByText(/Per product widgets/i);

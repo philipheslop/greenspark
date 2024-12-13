@@ -1,21 +1,21 @@
 h1 {
-    text-align: left;
+  text-align: left;
 }
 
 .outer-container {
-    margin: auto;
-    width: 930px;
+  margin: auto;
+  width: 930px;
 }
 
 .widgets-container {
-    display: flex;
+  display: flex;
 }
 
 @media (max-width: 930px) {
-    .widgets-container {
-        flex-direction: column; /* Stacks items vertically on smaller screens */
-    }
-    .outer-container {
-        width: 310px;
-    }
+  .widgets-container {
+    flex-direction: column; /* Stacks items vertically on smaller screens */
+  }
+  .outer-container {
+    width: 310px;
+  }
 }
