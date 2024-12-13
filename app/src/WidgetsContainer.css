@@ -2,6 +2,10 @@ h1 {
   text-align: left;
 }
 
+hr {
+  color: darkgray;
+}
+
 .outer-container {
   margin: auto;
   width: 930px;

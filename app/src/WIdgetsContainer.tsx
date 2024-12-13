@@ -18,7 +18,7 @@ export const WidgetsContainer = () => {
       <div className='widgets-container'>
         {processedData.map((widget: Widget) => {
           return (
-            <div>
+            <div key={widget.id}>
               <WidgetsComponent widget={widget}></WidgetsComponent>
             </div>
           );
