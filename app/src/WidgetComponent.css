@@ -77,3 +77,68 @@
 .widget-palette-element:hover {
     opacity: 66%;
 }
+
+.check_box {
+    display:none;
+}
+
+.check_box:hover + img{
+    background:url('./assets/check_box_hover.svg') no-repeat;
+    background-size: 20px;
+}
+
+/*.check_box:hover {
+    border-radius: 100%;
+    border-style: solid;
+    border-color: green;
+    border-width: 10px;
+}*/
+
+.check_box + label{
+    background:url('./assets/check_box_unchecked.svg') no-repeat;
+    background-size: 20px;
+    height:20px;
+    width: 20px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+    vertical-align: middle;
+}
+
+.check_box:checked + label{
+    background:url('./assets/check_box_checked.svg') no-repeat;
+    background-size: 20px;
+    height: 20px;
+    width: 20px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+    vertical-align: middle;
+}
+
+.toggle {
+    display:none;
+}
+
+.toggle:hover {
+    background:url('./assets/toggle_hover.svg') no-repeat;
+    background-size: 30px;
+}
+
+.toggle + label {
+    background:url('./assets/toggle_off.svg') no-repeat;
+    background-size: 30px;
+    height:20px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+    vertical-align: middle;
+}
+
+.toggle:checked + label {
+    background:url('./assets/toggle_on.svg') no-repeat;
+    background-size: 30px;
+    height: 20px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+    vertical-align: middle;
+}

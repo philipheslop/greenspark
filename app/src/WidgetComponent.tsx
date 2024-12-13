@@ -15,12 +15,10 @@ const updateWidgetColour = (id: number, colour: WidgetColor) => {
     queryClient.setQueryData(['widgets'], (widgets: Widget[]) => {
         return widgets.map((widget: Widget) => {
             if (widget.id === id) {
-                console.log(widget);
-                const newWidget = {
+                return {
                     ...widget,
                     selectedColor: colour,
-                }
-                return newWidget;
+                };
             }
             return widget;
         })
@@ -29,7 +27,7 @@ const updateWidgetColour = (id: number, colour: WidgetColor) => {
   
   const updateWidgetLinked = (id: number, linked: boolean) => {
     queryClient.setQueryData(['widgets'], (widgets: Widget[]) => {
-      widgets.map((widget: Widget) => {
+      return widgets.map((widget: Widget) => {
         if (widget.id === id) {
           return {
             ...widget,
@@ -52,7 +50,7 @@ const updateWidgetColour = (id: number, colour: WidgetColor) => {
             }
             return {
               ...widget,
-              active: !active,
+              active: false,
             }
         });
     });
@@ -77,9 +75,15 @@ export const WidgetsComponent:React.FC<WidgetComponentProps> = ({ widget }) => {
             </div>
             <div className="widget-body">
                 <div className="widget-body-item-l">Linked:</div>
-                <div className="widget-body-item-r">{widget.linked? 'true':'false'}</div>
+                <div className="widget-body-item-r">
+                    <input type="checkbox" className="check_box" id={"checkbox"+widget.id} checked={widget.linked} onChange={()=>updateWidgetLinked(widget.id,!widget.linked)}/>
+                    <label htmlFor={"checkbox"+widget.id} />
+                </div>
                 <div className="widget-body-item-l">Active:</div>
-                <div className="widget-body-item-r">{widget.active? 'active':'inactive'}</div>
+                <div className="widget-body-item-r">
+                    <input type="checkbox" className="toggle" id={"toggle"+widget.id} checked={widget.active} onChange={()=>updateWidgetActive(widget.id,!widget.active)}/>
+                    <label htmlFor={"toggle"+widget.id} />
+                </div>
                 <div className="widget-body-item-l">Badge Colour: </div>
                 <div className="widget-body-item-r">
                     <div className = 'widget-palette'>
