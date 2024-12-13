@@ -1,5 +1,5 @@
 //import { useContext } from "react";
-import { Widget } from './widgetUtils';
+import { useWidgets, Widget } from './widgetUtils';
 import { WidgetsComponent } from "./WidgetComponent";
 import './WidgetsContainer.css'
 
@@ -7,8 +7,9 @@ export interface WidgetContainerProps {
     processedData: Widget[]
 }
 
-export const WidgetsContainer:React.FC<WidgetContainerProps> = ({ processedData }) => {
-  //const setCurrentUser = useContext(CurrentUserContext);
+export const WidgetsContainer = () => {
+  const query = useWidgets();
+  const processedData = query.data? query.data : [];
 
   return (
     <div className='outer-container'>

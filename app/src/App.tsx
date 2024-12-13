@@ -1,10 +1,12 @@
 //import React, { useEffect, useState } from 'react';
-import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
+import { QueryClientProvider } from '@tanstack/react-query';
 import './App.css';
-import { getWidgets, Widget } from './widgetUtils';
+import { useWidgets, queryClient } from './widgetUtils';
 import { WidgetsContainer } from './WidgetsContainer';
+import { createContext } from 'react';
 
-const queryClient = new QueryClient()
+
+export const WidgetsContext = createContext(null);
 
 function App() {
   return (
@@ -15,16 +17,12 @@ function App() {
 }
 
 function AppContents() {
-  const { isLoading, error, data } = useQuery<Widget[]>({
-      queryKey: ['widgets'],
-      queryFn: getWidgets,
-  })
-  //const [activeWidget, setActiveWidget] = useState(null);
-  if (isLoading) return 'Loading...'
-  if (error) return 'An error has occurred: ' + error.message
+  const query = useWidgets();
+  if (query.isLoading) return 'Loading...'
+  if (query.error) return 'An error has occurred: ' + query.error.message
   return (
     <div className="App">
-      <WidgetsContainer processedData={data?data:[]}></WidgetsContainer>
+      <WidgetsContainer></WidgetsContainer>
     </div>
   )
 }
