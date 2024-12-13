@@ -22,6 +22,7 @@ function AppContents() {
   if (query.error) return 'An error has occurred: ' + query.error.message
   return (
     <div className="App">
+      <div className='App-header'></div>
       <WidgetsContainer></WidgetsContainer>
     </div>
   )
