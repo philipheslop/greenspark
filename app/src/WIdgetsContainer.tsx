@@ -1,4 +1,4 @@
-//import { useContext } from "react";
+import React from 'react';
 import { useWidgets, Widget } from './widgetUtils';
 import { WidgetsComponent } from "./WidgetComponent";
 import './WidgetsContainer.css'
